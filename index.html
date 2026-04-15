@@ -16,8 +16,13 @@ title: "Inici"
       {% for grup in site.data.species.grups %}
       <a href="{{ '/grups/' | append: grup.id | append: '/' | relative_url }}" class="group-card">
         <div class="gc-image">
-          {% assign first_ill = grup.il_lustracions | first %}
-          <img src="{{ '/assets/images/groups/' | append: first_ill.fitxer | relative_url }}"
+          {% if grup.nav_imatge %}
+            {% assign img_src = '/assets/images/groups/' | append: grup.nav_imatge %}
+          {% else %}
+            {% assign first_ill = grup.il_lustracions | first %}
+            {% assign img_src = '/assets/images/groups/' | append: first_ill.fitxer %}
+          {% endif %}
+          <img src="{{ img_src | relative_url }}"
                alt="{{ grup.nom }}"
                loading="lazy">
         </div>
@@ -28,48 +33,6 @@ title: "Inici"
         </div>
       </a>
       {% endfor %}
-    </div>
-  </section>
-
-  <!-- TAULA GENERAL -->
-  <section class="table-section container">
-    <h2>Taula general d'identificació</h2>
-    <div class="table-wrap">
-      <table class="id-table">
-        <thead>
-          <tr>
-            <th>Grup</th>
-            <th>Mida</th>
-            <th>Espècies</th>
-            <th>Diferències clau dins del grup</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for grup in site.data.species.grups %}
-          <tr>
-            <td>
-              <a href="{{ '/grups/' | append: grup.id | append: '/' | relative_url }}">{{ grup.nom }}</a>
-            </td>
-            <td class="mida-cell">{{ grup.mida }}</td>
-            <td>
-              <ul class="sp-list">
-                {% for esp in grup.especies %}
-                <li>{{ esp.nom }}</li>
-                {% endfor %}
-              </ul>
-            </td>
-            <td>
-              {% for diff in grup.diferencies %}
-              <div class="diff-row">
-                <span class="diff-tag">{{ diff.caracter }}</span>
-                {{ diff.descripcio }}
-              </div>
-              {% endfor %}
-            </td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
     </div>
   </section>
 

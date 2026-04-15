@@ -1,6 +1,7 @@
 grups:
   - id: limicoles-petits
     nom: "Limícoles petits"
+    nav_imatge: "limicoles-petits-sil.svg"
     mida: "14–27 cm"
     habitat: "Platges · Fangars · Prats humits"
     clau: "Limícoles de mida petita amb bec curt o mitjà. Distinguibles per la mida del bec, el color de les potes i els patrons del plomatge dorsal."
@@ -117,6 +118,7 @@ grups:
 
   - id: territs
     nom: "Territs"
+    nav_imatge: "territs-sil.svg"
     mida: "14–26 cm"
     habitat: "Fangars · Platges · Estuaris"
     clau: "Limícoles petits i compactes del gènere Calidris. Sovint gregaris. Clau: mida, forma del bec i plomatge nupcial. El Territ tres dits és l'únic sense dit posterior."
@@ -280,6 +282,7 @@ grups:
 
   - id: tringes
     nom: "Tringes"
+    nav_imatge: "tringes-sil.svg"
     mida: "18–34 cm"
     habitat: "Aiguamolls · Rius · Llacs"
     clau: "Limícoles de mida mitjana, potes i bec relativament llargs. El color de les potes és el primer caràcter a observar. La Xivitona es distingeix per la postura encorbada i el moviment constant de la cua."
@@ -426,6 +429,7 @@ grups:
 
   - id: becades
     nom: "Becades"
+    nav_imatge: "becades-sil.svg"
     mida: "18–38 cm"
     habitat: "Arrossars · Jonqueres · Boscos humits"
     clau: "Tots amb bec molt llarg i recte. Diferència principal: mida total, longitud relativa del bec, patró de la cua en vol i hàbitat. La Becada és forestal i crepuscular; els Becadells viuen en aiguamolls oberts."
@@ -510,6 +514,7 @@ grups:
 
   - id: batallaires
     nom: "Batallaires"
+    nav_imatge: "batallaires-sil.svg"
     mida: "22–32 cm"
     habitat: "Aiguamolls · Arrossars"
     clau: "Únic representant del grup a Catalunya. El fort dimorfisme sexual i els plomalls nupcials del mascle el fan inconfusible. Femelles i joves s'assemblen a un territ gran de potes clares."
@@ -543,6 +548,7 @@ grups:
 
   - id: tetols
     nom: "Tètols"
+    nav_imatge: "tetols-sil.svg"
     mida: "35–42 cm"
     habitat: "Aiguamolls litorals · Fangars"
     clau: "Limícoles grans amb bec recte i potes molt llargues. Caràcter diagnòstic principal: la cua negra (Cuanegre) vs. cua totalment barrada (Cuabarrat). La franja alar en vol ho confirma."
@@ -597,6 +603,7 @@ grups:
 
   - id: siglots
     nom: "Siglots"
+    nav_imatge: "siglots-sil.svg"
     mida: "37–57 cm"
     habitat: "Aiguamolls · Erms · Litoral"
     clau: "Els siglots (curleres) són els limícoles més grans, amb bec extremadament llarg i corbat. El Becut és el major limícola de Catalunya. La cella i el pili molt marcats diferencien el Polit del Becut."
