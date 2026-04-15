@@ -17,7 +17,7 @@ grups:
     especies:
       - nom: "Corriol petit"
         nom_cientific: "Charadrius dubius"
-        imatge: "corriol-petit.png"
+        imatge: "charadrius-dubius.jpg"
         mida: "15–18 cm"
         caracteristiques:
           - label: "Bec"
@@ -30,7 +30,7 @@ grups:
             desc: "sense franja alar blanca"
       - nom: "Corriol gros"
         nom_cientific: "Charadrius hiaticula"
-        imatge: "corriol-gros.png"
+        imatge: "charadrius-hiaticula.jpg"
         mida: "17–20 cm"
         caracteristiques:
           - label: "Bec"
@@ -43,7 +43,7 @@ grups:
             desc: "franja alar blanca distintiva"
       - nom: "Corriol camanegre"
         nom_cientific: "Charadrius alexandrinus"
-        imatge: "corriol-camanegre.png"
+        imatge: "charadrius-alexandrinus.jpg"
         mida: "15–17 cm"
         caracteristiques:
           - label: "Potes"
@@ -56,7 +56,7 @@ grups:
             desc: "pili canyella i franja frontal negra"
       - nom: "Daurada grossa"
         nom_cientific: "Pluvialis apricaria"
-        imatge: "daurada-grossa.png"
+        imatge: "pluvialis-apricaria.jpg"
         mida: "26–29 cm"
         caracteristiques:
           - label: "Dors"
@@ -67,7 +67,7 @@ grups:
             desc: "ales completament fosques per sota"
       - nom: "Pigre gris"
         nom_cientific: "Pluvialis squatarola"
-        imatge: "pigre-gris.png"
+        imatge: "pluvialis-squatarola.png"
         mida: "27–30 cm"
         caracteristiques:
           - label: "Dors"
@@ -78,7 +78,7 @@ grups:
             desc: "taca axil·lar negra característica"
       - nom: "Remena-rocs"
         nom_cientific: "Arenaria interpres"
-        imatge: "remena-rocs.png"
+        imatge: "arenaria-interpres.jpg"
         mida: "21–25 cm"
         caracteristiques:
           - label: "Plomatge"
@@ -112,7 +112,7 @@ grups:
     especies:
       - nom: "Territ menut comú"
         nom_cientific: "Calidris minuta"
-        imatge: "territ-menut.png"
+        imatge: "calidris-minuta.jpg"
         mida: "14–15 cm"
         caracteristiques:
           - label: "Mida"
@@ -125,7 +125,7 @@ grups:
             desc: "doble V blanca a l'esquena característica"
       - nom: "Territ de Temminck"
         nom_cientific: "Calidris temminckii"
-        imatge: "territ-temminck.png"
+        imatge: "calidris-temminckii.jpg"
         mida: "14–15 cm"
         caracteristiques:
           - label: "Potes"
@@ -138,7 +138,7 @@ grups:
             desc: "«tirrrt» vibrant"
       - nom: "Territ tres dits"
         nom_cientific: "Calidris alba"
-        imatge: "territ-tres-dits.png"
+        imatge: "calidris-alba.jpg"
         mida: "18–21 cm"
         caracteristiques:
           - label: "Potes"
@@ -149,7 +149,7 @@ grups:
             desc: "platges sorrenques, segueix les onades"
       - nom: "Territ variant"
         nom_cientific: "Calidris alpina"
-        imatge: "territ-variant.png"
+        imatge: "calidris-alpina.png"
         mida: "17–21 cm"
         caracteristiques:
           - label: "Bec"
@@ -162,7 +162,7 @@ grups:
             desc: "«triip» característic"
       - nom: "Territ becllarg"
         nom_cientific: "Calidris ferruginea"
-        imatge: "territ-becllarg.png"
+        imatge: "calidris-ferruginea.jpg"
         mida: "19–22 cm"
         caracteristiques:
           - label: "Bec"
@@ -173,7 +173,7 @@ grups:
             desc: "carpó blanc sense franja central negra"
       - nom: "Territ gros"
         nom_cientific: "Calidris canutus"
-        imatge: "territ-gros.png"
+        imatge: "calidris-canutus.jpg"
         mida: "23–26 cm"
         caracteristiques:
           - label: "Mida"
@@ -371,7 +371,7 @@ grups:
             desc: "vol recte, baix i silenciós (no en ziga-zaga)"
       - nom: "Becada euràsiatica"
         nom_cientific: "Scolopax rusticola"
-        imatge: "becada.png"
+        imatge: "scolopax-rusticola.jpg"
         mida: "33–38 cm"
         caracteristiques:
           - label: "Mida"
