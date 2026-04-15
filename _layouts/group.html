@@ -39,7 +39,7 @@ layout: default
       <div class="species-grid">
         {% for esp in grup.especies %}
         <div class="species-card">
-          <div class="sp-image">
+          <div class="sp-image" data-wiki="{{ esp.nom_cientific | replace: ' ', '_' }}">
             <img src="{{ '/assets/images/groups/' | append: grup.id | append: '/' | append: esp.imatge | relative_url }}"
                  alt="{{ esp.nom }}" loading="lazy" onerror="this.closest('.sp-image').classList.add('no-image')">
             <div class="no-image-placeholder"><span>{{ esp.nom | slice: 0, 1 }}</span></div>
@@ -71,3 +71,22 @@ layout: default
   </section>
 
 </div>
+
+<script>
+document.querySelectorAll('.sp-image[data-wiki]').forEach(function(el) {
+  var title = el.dataset.wiki;
+  var img = el.querySelector('img');
+  fetch('https://en.wikipedia.org/api/rest_v1/page/summary/' + encodeURIComponent(title))
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.originalimage && data.originalimage.source) {
+        img.src = data.originalimage.source;
+        el.classList.remove('no-image');
+      } else if (data.thumbnail && data.thumbnail.source) {
+        img.src = data.thumbnail.source;
+        el.classList.remove('no-image');
+      }
+    })
+    .catch(function() {});
+});
+</script>
