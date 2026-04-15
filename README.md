@@ -1,6 +1,6 @@
 # Limícoles de Catalunya — Guia d'Identificació
 
-Lloc web Jekyll amb guia d'identificació de limícoles: taula general, fitxes per grup i il·lustracions.
+Lloc web amb guia d'identificació de limícoles: taula general, fitxes per grup i il·lustracions.
 
 ## Com desplegar a GitHub Pages
 
