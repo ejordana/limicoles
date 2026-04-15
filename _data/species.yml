@@ -264,7 +264,7 @@ grups:
             desc: "potent «tiu-tiu-tiu»"
       - nom: "Gamba groga petita"
         nom_cientific: "Tringa flavipes"
-        imatge: "gamba-groga-petita.png"
+        imatge: "tringa-flavipes.jpg"
         mida: "23–25 cm"
         caracteristiques:
           - label: "Potes"
@@ -275,7 +275,7 @@ grups:
             desc: "divagant de Nord-amèrica"
       - nom: "Siseta comuna"
         nom_cientific: "Tringa stagnatilis"
-        imatge: "siseta.png"
+        imatge: "tringa-stagnatilis.jpg"
         mida: "22–25 cm"
         caracteristiques:
           - label: "Potes"
@@ -286,7 +286,7 @@ grups:
             desc: "molt esvelt; peus sobresurten per darrere la cua"
       - nom: "Xivita comuna"
         nom_cientific: "Tringa ochropus"
-        imatge: "xivita.png"
+        imatge: "tringa-ochropus.jpg"
         mida: "20–24 cm"
         caracteristiques:
           - label: "Plomatge"
@@ -297,7 +297,7 @@ grups:
             desc: "rius i canals de reg"
       - nom: "Valona"
         nom_cientific: "Tringa glareola"
-        imatge: "valona.png"
+        imatge: "tringa-glareola.jpg"
         mida: "19–21 cm"
         caracteristiques:
           - label: "Dors"
@@ -308,7 +308,7 @@ grups:
             desc: "«xif-if-if»"
       - nom: "Xivitona comuna"
         nom_cientific: "Actitis hypoleucos"
-        imatge: "xivitona.png"
+        imatge: "actitis-hypoleucos.jpg"
         mida: "18–20 cm"
         caracteristiques:
           - label: "Postura"
@@ -336,7 +336,7 @@ grups:
     especies:
       - nom: "Becadell comú"
         nom_cientific: "Gallinago gallinago"
-        imatge: "becadell.png"
+        imatge: "gallinago-gallinago.jpg"
         mida: "23–28 cm"
         caracteristiques:
           - label: "Bec"
@@ -349,7 +349,7 @@ grups:
             desc: "«xxeec» raspós en enlairar-se"
       - nom: "Becadell gros"
         nom_cientific: "Gallinago media"
-        imatge: "becadell-gros.png"
+        imatge: "gallinago-media.jpg"
         mida: "26–30 cm"
         caracteristiques:
           - label: "Cua"
@@ -360,7 +360,7 @@ grups:
             desc: "recte i poc alt; enlairament més lent que el Becadell"
       - nom: "Becadell sord"
         nom_cientific: "Lymnocryptes minimus"
-        imatge: "becadell-sord.png"
+        imatge: "lymnocryptes-minimus.png"
         mida: "18–20 cm"
         caracteristiques:
           - label: "Bec"
@@ -399,7 +399,7 @@ grups:
     especies:
       - nom: "Batallaire"
         nom_cientific: "Calidris pugnax"
-        imatge: "batallaire.png"
+        imatge: "calidris-pugnax.jpg"
         mida: "♂ 29–32 cm · ♀ 22–26 cm"
         caracteristiques:
           - label: "♂ nup."
@@ -429,7 +429,7 @@ grups:
     especies:
       - nom: "Tètol cuanegre"
         nom_cientific: "Limosa limosa"
-        imatge: "tetol-cuanegre.png"
+        imatge: "limosa-limosa.jpg"
         mida: "37–42 cm"
         caracteristiques:
           - label: "Cua"
