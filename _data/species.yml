@@ -442,7 +442,7 @@ grups:
             desc: "àmplia franja alar blanca + cua negra = inequívoc"
       - nom: "Tètol cuabarrat"
         nom_cientific: "Limosa lapponica"
-        imatge: "tetol-cuabarrat.png"
+        imatge: "limosa-lapponica.jpg"
         mida: "35–41 cm"
         caracteristiques:
           - label: "Cua"
@@ -472,7 +472,7 @@ grups:
     especies:
       - nom: "Becut euràsiàtic"
         nom_cientific: "Numenius arquata"
-        imatge: "becut.png"
+        imatge: "numenius-arquata.jpg"
         mida: "48–57 cm"
         caracteristiques:
           - label: "Bec"
@@ -485,7 +485,7 @@ grups:
             desc: "«cur-luí» descendent"
       - nom: "Polit cantaire"
         nom_cientific: "Numenius phaeopus"
-        imatge: "polit.png"
+        imatge: "numenius-phaeopus.jpg"
         mida: "37–45 cm"
         caracteristiques:
           - label: "Bec"
