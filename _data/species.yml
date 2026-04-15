@@ -9,16 +9,23 @@ grups:
         peu: "Corriol pit-roig, Daurada grossa, Pigre gris"
     diferencies:
       - caracter: "Bec"
+        clau: "bec"
         descripcio: "Corriol petit: fi i prim; Corriol gros: clarament més gruixut; Corriol camanegre: negre, prim"
       - caracter: "Potes"
+        clau: "potes"
         descripcio: "Corriols petit i gros: carn/ataronjades; Corriol camanegre: NEGRES"
       - caracter: "Plomatge"
+        clau: "plomatge"
         descripcio: "Daurada: dors daurat; Pigre gris: dors gris; Remena-rocs: mosaic marró-negre"
     especies:
       - nom: "Corriol petit"
         nom_cientific: "Charadrius dubius"
         imatge: "charadrius-dubius.jpg"
         mida: "15–18 cm"
+        filtres:
+          bec: fi
+          potes: ataronjades
+          plomatge: uniforme
         caracteristiques:
           - label: "Bec"
             desc: "fi i prim, negre"
@@ -32,6 +39,10 @@ grups:
         nom_cientific: "Charadrius hiaticula"
         imatge: "charadrius-hiaticula.jpg"
         mida: "17–20 cm"
+        filtres:
+          bec: gruixut
+          potes: ataronjades
+          plomatge: uniforme
         caracteristiques:
           - label: "Bec"
             desc: "clarament més gruixut; ataronjat amb punta negra (nup.)"
@@ -45,6 +56,10 @@ grups:
         nom_cientific: "Charadrius alexandrinus"
         imatge: "charadrius-alexandrinus.jpg"
         mida: "15–17 cm"
+        filtres:
+          bec: fi
+          potes: negres
+          plomatge: uniforme
         caracteristiques:
           - label: "Potes"
             desc: "NEGRES (caràcter diagnòstic principal)"
@@ -58,6 +73,10 @@ grups:
         nom_cientific: "Pluvialis apricaria"
         imatge: "pluvialis-apricaria.jpg"
         mida: "26–29 cm"
+        filtres:
+          bec: curt
+          potes: negres
+          plomatge: daurat
         caracteristiques:
           - label: "Dors"
             desc: "daurat/ocre amb taques negres i daurades"
@@ -69,6 +88,10 @@ grups:
         nom_cientific: "Pluvialis squatarola"
         imatge: "pluvialis-squatarola.png"
         mida: "27–30 cm"
+        filtres:
+          bec: curt
+          potes: negres
+          plomatge: gris
         caracteristiques:
           - label: "Dors"
             desc: "gris cendrós (no daurat)"
@@ -80,6 +103,10 @@ grups:
         nom_cientific: "Arenaria interpres"
         imatge: "arenaria-interpres.jpg"
         mida: "21–25 cm"
+        filtres:
+          bec: curt
+          potes: ataronjades
+          plomatge: mosaic
         caracteristiques:
           - label: "Plomatge"
             desc: "patró de mosaic marró-negre-blanc molt característic"
@@ -102,18 +129,27 @@ grups:
         peu: "Territ menut, Territ de Temminck, Territ becadell"
     diferencies:
       - caracter: "Mida"
+        clau: "mida"
         descripcio: "Territ menut i Temminck: 14-15 cm; Territ gros: 23-26 cm"
       - caracter: "Bec"
+        clau: "bec"
         descripcio: "Territ becllarg: corbat cap avall; Territ tres dits: curt i recte; Territ variant: mig corbat"
       - caracter: "Potes"
+        clau: "potes"
         descripcio: "Territ tres dits: SENSE dit posterior (únic!); Territ Temminck: potes clares"
       - caracter: "Plomatge nup."
+        clau: "nup"
         descripcio: "Territ gros: pit rogenc intens; Territ fosc: parts superiors negroses"
     especies:
       - nom: "Territ menut comú"
         nom_cientific: "Calidris minuta"
         imatge: "calidris-minuta.jpg"
         mida: "14–15 cm"
+        filtres:
+          mida: molt-petit
+          bec: curt
+          potes: negres
+          nup: marró-rogenc
         caracteristiques:
           - label: "Mida"
             desc: "molt petit, el més petit dels territs"
@@ -127,6 +163,11 @@ grups:
         nom_cientific: "Calidris temminckii"
         imatge: "calidris-temminckii.jpg"
         mida: "14–15 cm"
+        filtres:
+          mida: molt-petit
+          bec: curt
+          potes: clares
+          nup: gris-uniforme
         caracteristiques:
           - label: "Potes"
             desc: "CLARES/groguenques (vs. fosques del Territ menut)"
@@ -140,6 +181,11 @@ grups:
         nom_cientific: "Calidris alba"
         imatge: "calidris-alba.jpg"
         mida: "18–21 cm"
+        filtres:
+          mida: petit
+          bec: curt
+          potes: negres
+          nup: rogenc
         caracteristiques:
           - label: "Potes"
             desc: "SENSE dit posterior (únic entre els territs!); potes negres"
@@ -151,6 +197,11 @@ grups:
         nom_cientific: "Calidris alpina"
         imatge: "calidris-alpina.png"
         mida: "17–21 cm"
+        filtres:
+          mida: petit
+          bec: mig-corbat
+          potes: negres
+          nup: negre-ventral
         caracteristiques:
           - label: "Bec"
             desc: "negre, mig llarg, extrem lleugerament corbat"
@@ -164,6 +215,11 @@ grups:
         nom_cientific: "Calidris ferruginea"
         imatge: "calidris-ferruginea.jpg"
         mida: "19–22 cm"
+        filtres:
+          mida: petit
+          bec: corbat
+          potes: negres
+          nup: rovellat
         caracteristiques:
           - label: "Bec"
             desc: "llarg, corbat cap avall a l'extrem (caràcter diagnòstic)"
@@ -175,6 +231,11 @@ grups:
         nom_cientific: "Calidris canutus"
         imatge: "calidris-canutus.jpg"
         mida: "23–26 cm"
+        filtres:
+          mida: gran
+          bec: curt
+          potes: negres
+          nup: rogenc-intens
         caracteristiques:
           - label: "Mida"
             desc: "el més gran dels territs, corpulent"
@@ -188,6 +249,11 @@ grups:
         nom_cientific: "Calidris maritima"
         imatge: "calidris-maritima.jpg"
         mida: "19–22 cm"
+        filtres:
+          mida: petit
+          bec: curt
+          potes: ataronjades
+          nup: fosc
         caracteristiques:
           - label: "Plomatge"
             desc: "molt fosc, gris pissarra, aspecte rodanxó"
@@ -199,6 +265,11 @@ grups:
         nom_cientific: "Calidris falcinellus"
         imatge: "calidris-falcinellus.jpg"
         mida: "15–18 cm"
+        filtres:
+          mida: molt-petit
+          bec: corbat
+          potes: negres
+          nup: marró
         caracteristiques:
           - label: "Bec"
             desc: "punta clarament torçada cap avall"
@@ -221,16 +292,23 @@ grups:
         peu: "Xivita, Valona, Xivitona"
     diferencies:
       - caracter: "Potes"
+        clau: "potes"
         descripcio: "Gambes roges: vermelles; Gamba verda: verdoses; Gamba groga petita: grogues"
       - caracter: "Mida"
+        clau: "mida"
         descripcio: "Gamba verda: 30-34 cm (la més gran); Xivitona: 18-20 cm (la més petita)"
       - caracter: "Vol"
+        clau: "vol"
         descripcio: "Xivita: ales completament negres per sota; Gamba roja: franja alar blanca; Gamba verda: carpó blanc sense franja"
     especies:
       - nom: "Gamba roja comuna"
         nom_cientific: "Tringa totanus"
         imatge: "tringa-totanus.jpg"
         mida: "24–27 cm"
+        filtres:
+          potes: vermelles
+          mida: mitja
+          vol: franja-blanca
         caracteristiques:
           - label: "Potes"
             desc: "VERMELLES (caràcter diagnòstic)"
@@ -244,6 +322,10 @@ grups:
         nom_cientific: "Tringa erythropus"
         imatge: "tringa-erythropus.jpg"
         mida: "29–33 cm"
+        filtres:
+          potes: vermelles
+          mida: gran
+          vol: sense-franja
         caracteristiques:
           - label: "Potes"
             desc: "vermelles; bec fi i llarg, tot negre"
@@ -255,6 +337,10 @@ grups:
         nom_cientific: "Tringa nebularia"
         imatge: "tringa-nebularia.jpg"
         mida: "30–34 cm"
+        filtres:
+          potes: verdoses
+          mida: gran
+          vol: sense-franja
         caracteristiques:
           - label: "Potes"
             desc: "VERDOSES; bec gruixut, llarg, lleug. corbat cap amunt"
@@ -266,6 +352,10 @@ grups:
         nom_cientific: "Tringa flavipes"
         imatge: "tringa-flavipes.jpg"
         mida: "23–25 cm"
+        filtres:
+          potes: grogues
+          mida: mitja
+          vol: barrada
         caracteristiques:
           - label: "Potes"
             desc: "GROGUES; bec fi i recte"
@@ -277,6 +367,10 @@ grups:
         nom_cientific: "Tringa stagnatilis"
         imatge: "tringa-stagnatilis.jpg"
         mida: "22–25 cm"
+        filtres:
+          potes: verdoses
+          mida: mitja
+          vol: sense-franja
         caracteristiques:
           - label: "Potes"
             desc: "verdoses/oliva, molt llargues i fines"
@@ -288,6 +382,10 @@ grups:
         nom_cientific: "Tringa ochropus"
         imatge: "tringa-ochropus.jpg"
         mida: "20–24 cm"
+        filtres:
+          potes: verdoses
+          mida: mitja
+          vol: ales-negres
         caracteristiques:
           - label: "Plomatge"
             desc: "molt fosc (quasi negre) per sobre"
@@ -299,6 +397,10 @@ grups:
         nom_cientific: "Tringa glareola"
         imatge: "tringa-glareola.jpg"
         mida: "19–21 cm"
+        filtres:
+          potes: verdoses
+          mida: petit
+          vol: clar
         caracteristiques:
           - label: "Dors"
             desc: "pigallat (menys fosc que la Xivita); cella blanca marcada"
@@ -310,6 +412,10 @@ grups:
         nom_cientific: "Actitis hypoleucos"
         imatge: "actitis-hypoleucos.jpg"
         mida: "18–20 cm"
+        filtres:
+          potes: ataronjades
+          mida: petit
+          vol: ales-rigides
         caracteristiques:
           - label: "Postura"
             desc: "encorbada, gronxa contínuament la part posterior"
@@ -328,16 +434,23 @@ grups:
         peu: "Becadell gros, Becadell comú, Becadell sord"
     diferencies:
       - caracter: "Mida"
+        clau: "mida"
         descripcio: "Becadell sord: 18-20 cm; Becadell comú: 23-28 cm; Becadell gros: 26-30 cm; Becada: 33-38 cm"
       - caracter: "Cua (vol)"
+        clau: "cua"
         descripcio: "Becadell gros: laterals blanc pur (triple banda); Becadell comú: cua rogenca arrodonida"
       - caracter: "Vol"
+        clau: "vol"
         descripcio: "Becadell comú: vol en ziga-zaga explosiu; Becadell sord: vol recte i baix, silenciós"
     especies:
       - nom: "Becadell comú"
         nom_cientific: "Gallinago gallinago"
         imatge: "gallinago-gallinago.jpg"
         mida: "23–28 cm"
+        filtres:
+          mida: mitja
+          cua: rogenca
+          vol: ziga-zaga
         caracteristiques:
           - label: "Bec"
             desc: "molt llarg (6-7 cm)"
@@ -351,6 +464,10 @@ grups:
         nom_cientific: "Gallinago media"
         imatge: "gallinago-media.jpg"
         mida: "26–30 cm"
+        filtres:
+          mida: mitja
+          cua: blanc-pur
+          vol: recte
         caracteristiques:
           - label: "Cua"
             desc: "laterals de la cua BLANC PUR (diferència clau)"
@@ -362,6 +479,10 @@ grups:
         nom_cientific: "Lymnocryptes minimus"
         imatge: "lymnocryptes-minimus.png"
         mida: "18–20 cm"
+        filtres:
+          mida: petit
+          cua: no-visible
+          vol: recte-baix
         caracteristiques:
           - label: "Bec"
             desc: "clarament més curt que els altres becadells"
@@ -373,6 +494,10 @@ grups:
         nom_cientific: "Scolopax rusticola"
         imatge: "scolopax-rusticola.jpg"
         mida: "33–38 cm"
+        filtres:
+          mida: gran
+          cua: arrodonida
+          vol: entre-arbres
         caracteristiques:
           - label: "Mida"
             desc: "gran i corpulenta, la més gran del grup"
@@ -393,14 +518,19 @@ grups:
         peu: "Becada euràsiatica, Batallaire (♀ i ♂ nup.), Territ rogenc"
     diferencies:
       - caracter: "Dimorfisme"
+        clau: "dimorfisme"
         descripcio: "Mascle nup.: plomalls auriculars únics, colors molt variables (blanc, negre, rovell)"
       - caracter: "Mida"
+        clau: "mida"
         descripcio: "Mascle notablement major que femella (29-32 vs 22-26 cm)"
     especies:
       - nom: "Batallaire"
         nom_cientific: "Calidris pugnax"
         imatge: "calidris-pugnax.jpg"
         mida: "♂ 29–32 cm · ♀ 22–26 cm"
+        filtres:
+          dimorfisme: alt
+          mida: mitja
         caracteristiques:
           - label: "♂ nup."
             desc: "grans plomalls auriculars (color molt variable)"
@@ -421,16 +551,23 @@ grups:
         peu: "Tètol cuanegre, Tètol cuabarrat"
     diferencies:
       - caracter: "Cua"
+        clau: "cua"
         descripcio: "Cuanegre: cua NEGRA amb base blanca; Cuabarrat: cua TOTALMENT BARRADA"
       - caracter: "Bec"
+        clau: "bec"
         descripcio: "Cuanegre: recte; Cuabarrat: lleugerament corbat cap amunt"
       - caracter: "Vol"
+        clau: "vol"
         descripcio: "Cuanegre: àmplia franja alar blanca; Cuabarrat: SENSE franja alar"
     especies:
       - nom: "Tètol cuanegre"
         nom_cientific: "Limosa limosa"
         imatge: "limosa-limosa.jpg"
         mida: "37–42 cm"
+        filtres:
+          cua: negra
+          bec: recte
+          vol: franja-blanca
         caracteristiques:
           - label: "Cua"
             desc: "CUA NEGRA amb base blanca (diagnòstic)"
@@ -444,6 +581,10 @@ grups:
         nom_cientific: "Limosa lapponica"
         imatge: "limosa-lapponica.jpg"
         mida: "35–41 cm"
+        filtres:
+          cua: barrada
+          bec: corbat-amunt
+          vol: sense-franja
         caracteristiques:
           - label: "Cua"
             desc: "CUA TOTALMENT BARRADA (diagnòstic)"
@@ -464,16 +605,23 @@ grups:
         peu: "Becut euràsiàtic, Polit cantaire"
     diferencies:
       - caracter: "Mida"
+        clau: "mida"
         descripcio: "Becut: 48-57 cm (el major limícola); Polit: 37-45 cm"
       - caracter: "Bec"
+        clau: "bec"
         descripcio: "Becut: extremadament llarg i corbat; Polit: bec clarament menys corbat i més curt"
       - caracter: "Cap"
+        clau: "cap"
         descripcio: "Polit: cella clara molt marcada, pili dividit per banda central; Becut: cap llistat uniforme"
     especies:
       - nom: "Becut euràsiàtic"
         nom_cientific: "Numenius arquata"
         imatge: "numenius-arquata.jpg"
         mida: "48–57 cm"
+        filtres:
+          mida: molt-gran
+          bec: molt-corbat
+          cap: uniforme
         caracteristiques:
           - label: "Bec"
             desc: "extremadament llarg i corbat (sobretot femelles)"
@@ -487,6 +635,10 @@ grups:
         nom_cientific: "Numenius phaeopus"
         imatge: "numenius-phaeopus.jpg"
         mida: "37–45 cm"
+        filtres:
+          mida: gran
+          bec: corbat
+          cap: cella-marcada
         caracteristiques:
           - label: "Bec"
             desc: "clarament menys corbat i més curt que el Becut"

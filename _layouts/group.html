@@ -31,14 +31,77 @@ layout: default
       </div>
     </div>
   </section>
-  
+
   <!-- FITXES D'IDENTIFICACIÓ -->
   <section class="section-species">
     <div class="container">
       <h2>Fitxes d'identificació</h2>
-      <div class="species-grid">
+
+      <!-- FILTRES -->
+      {% assign num_filter_groups = 0 %}
+      {% for diff in grup.diferencies %}
+        {% if diff.clau %}
+          {% assign clau = diff.clau %}
+          {% assign vals = "" | split: "," %}
+          {% for esp in grup.especies %}
+            {% assign v = esp.filtres[clau] %}
+            {% if v %}
+              {% unless vals contains v %}
+                {% assign vals = vals | push: v %}
+              {% endunless %}
+            {% endif %}
+          {% endfor %}
+          {% if vals.size >= 2 %}
+            {% assign num_filter_groups = num_filter_groups | plus: 1 %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      {% if num_filter_groups > 0 %}
+      <div class="filter-bar" id="filter-bar">
+        {% for diff in grup.diferencies %}
+          {% if diff.clau %}
+            {% assign clau = diff.clau %}
+            {% assign vals = "" | split: "," %}
+            {% for esp in grup.especies %}
+              {% assign v = esp.filtres[clau] %}
+              {% if v %}
+                {% unless vals contains v %}
+                  {% assign vals = vals | push: v %}
+                {% endunless %}
+              {% endif %}
+            {% endfor %}
+            {% if vals.size >= 2 %}
+            <div class="filter-group" data-category="{{ clau }}">
+              <span class="filter-category-label">{{ diff.caracter }}</span>
+              <div class="filter-btns">
+                <button class="filter-btn active" data-value="">Tots</button>
+                {% for v in vals %}
+                <button class="filter-btn" data-value="{{ v }}">{{ v | replace: '-', ' ' }}</button>
+                {% endfor %}
+              </div>
+            </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        <div class="filter-status">
+          <span id="filter-count"></span>
+          <button class="filter-reset" id="filter-reset" style="display:none">Reinicia filtres</button>
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="species-grid" id="species-grid">
         {% for esp in grup.especies %}
-        <div class="species-card">
+        <div class="species-card"
+          {% for diff in grup.diferencies %}
+            {% if diff.clau %}
+              {% assign clau = diff.clau %}
+              {% assign v = esp.filtres[clau] %}
+              {% if v %}data-{{ clau }}="{{ v }}" {% endif %}
+            {% endif %}
+          {% endfor %}
+        >
           <div class="sp-image">
             <img src="{{ '/assets/images/groups/' | append: grup.id | append: '/' | append: esp.imatge | relative_url }}"
                  alt="{{ esp.nom }}" loading="lazy" onerror="this.closest('.sp-image').classList.add('no-image')">
@@ -67,7 +130,88 @@ layout: default
         </div>
         {% endfor %}
       </div>
+
+      <p class="no-results" id="no-results" style="display:none">
+        Cap espècie coincideix amb els filtres seleccionats.
+      </p>
+
     </div>
   </section>
 
 </div>
+
+<script>
+(function () {
+  var filterBar = document.getElementById('filter-bar');
+  if (!filterBar) return;
+
+  var cards = Array.from(document.querySelectorAll('.species-card'));
+  var countEl = document.getElementById('filter-count');
+  var resetBtn = document.getElementById('filter-reset');
+  var noResults = document.getElementById('no-results');
+  var active = {};
+
+  // Inicialitza categories
+  document.querySelectorAll('.filter-group').forEach(function (group) {
+    active[group.dataset.category] = '';
+  });
+
+  function updateCount() {
+    var visible = cards.filter(function (c) { return c.style.display !== 'none'; }).length;
+    if (countEl) {
+      countEl.textContent = visible + ' ' + (visible === 1 ? 'espècie' : 'espècies');
+    }
+    if (noResults) {
+      noResults.style.display = visible === 0 ? '' : 'none';
+    }
+  }
+
+  function applyFilters() {
+    var anyActive = Object.values(active).some(function (v) { return v !== ''; });
+    if (resetBtn) resetBtn.style.display = anyActive ? '' : 'none';
+
+    cards.forEach(function (card) {
+      var show = true;
+      for (var cat in active) {
+        if (active[cat] && card.dataset[cat] !== active[cat]) {
+          show = false;
+          break;
+        }
+      }
+      card.style.display = show ? '' : 'none';
+    });
+
+    updateCount();
+  }
+
+  // Inicialitza botons
+  document.querySelectorAll('.filter-group').forEach(function (group) {
+    var category = group.dataset.category;
+    group.querySelectorAll('.filter-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        active[category] = this.dataset.value;
+        group.querySelectorAll('.filter-btn').forEach(function (b) {
+          b.classList.remove('active');
+        });
+        this.classList.add('active');
+        applyFilters();
+      });
+    });
+  });
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function () {
+      document.querySelectorAll('.filter-group').forEach(function (group) {
+        active[group.dataset.category] = '';
+        var first = group.querySelector('.filter-btn');
+        group.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
+        if (first) first.classList.add('active');
+      });
+      applyFilters();
+    });
+  }
+
+  // Mostra el total inicial
+  updateCount();
+})();
+</script>
