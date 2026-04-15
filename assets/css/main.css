@@ -441,16 +441,12 @@ a:hover { text-decoration: underline; }
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .main-nav { display: none; }
   .groups-cards { grid-template-columns: 1fr; }
   .species-grid { grid-template-columns: 1fr; }
   .illustrations-grid { grid-template-columns: 1fr; }
   .id-table { font-size: 0.78rem; }
-}
-
-
-@media (max-width: 700px) {
   .sp-ill-card,
   .sp-ill-image,
   .sp-ill-image img {

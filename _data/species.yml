@@ -186,7 +186,7 @@ grups:
             desc: "gris uniforme; carpó gris pàl·lid"
       - nom: "Territ fosc"
         nom_cientific: "Calidris maritima"
-        imatge: "territ-fosc.png"
+        imatge: "calidris-maritima.jpg"
         mida: "19–22 cm"
         caracteristiques:
           - label: "Plomatge"
@@ -197,7 +197,7 @@ grups:
             desc: "costes rocoses (molt rar a Catalunya)"
       - nom: "Territ becadell"
         nom_cientific: "Calidris falcinellus"
-        imatge: "territ-becadell.png"
+        imatge: "calidris-falcinellus.jpg"
         mida: "15–18 cm"
         caracteristiques:
           - label: "Bec"
@@ -229,7 +229,7 @@ grups:
     especies:
       - nom: "Gamba roja comuna"
         nom_cientific: "Tringa totanus"
-        imatge: "gamba-roja.png"
+        imatge: "tringa-totanus.jpg"
         mida: "24–27 cm"
         caracteristiques:
           - label: "Potes"
@@ -242,7 +242,7 @@ grups:
             desc: "«ti-diu-du» trisil·làbic"
       - nom: "Gamba roja pintada"
         nom_cientific: "Tringa erythropus"
-        imatge: "gamba-roja-pintada.png"
+        imatge: "tringa-erythropus.jpg"
         mida: "29–33 cm"
         caracteristiques:
           - label: "Potes"
@@ -253,7 +253,7 @@ grups:
             desc: "cua barrada i tascó blanc entre les ales (sense franja alar)"
       - nom: "Gamba verda"
         nom_cientific: "Tringa nebularia"
-        imatge: "gamba-verda.png"
+        imatge: "tringa-nebularia.jpg"
         mida: "30–34 cm"
         caracteristiques:
           - label: "Potes"
