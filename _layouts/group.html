@@ -32,34 +32,62 @@ layout: default
     </div>
   </section>
 
-  <!-- IL·LUSTRACIONS -->
+  <!-- IL·LUSTRACIONS PER ESPÈCIE -->
   <section class="section-illustrations">
     <div class="container">
-      <h2>Il·lustracions</h2>
+      <h2>Il·lustracions per espècie</h2>
+      <div class="species-illustrations-grid">
+        {% for esp in grup.especies %}
+        <div class="sp-ill-card">
+          <div class="sp-ill-image">
+            <img src="{{ '/assets/images/groups/' | append: grup.id | append: '/' | append: esp.imatge | relative_url }}"
+                 alt="{{ esp.nom }}"
+                 loading="lazy"
+                 onerror="this.closest('.sp-ill-image').classList.add('no-image')">
+            <div class="no-image-placeholder"><span>{{ esp.nom | slice: 0, 1 }}</span></div>
+          </div>
+          <div class="sp-ill-label">
+            <div class="sp-ill-nom">{{ esp.nom }}</div>
+            <div class="sp-ill-sci">{{ esp.nom_cientific }}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      {% if grup.il_lustracions %}
+      <h3 class="refs-title">Il·lustracions de referència del grup</h3>
       <div class="illustrations-grid">
         {% for ill in grup.il_lustracions %}
         <figure class="illustration-figure">
           <img src="{{ '/assets/images/groups/' | append: ill.fitxer | relative_url }}"
-               alt="{{ ill.peu }}"
-               loading="lazy">
+               alt="{{ ill.peu }}" loading="lazy">
           <figcaption>{{ ill.peu }}</figcaption>
         </figure>
         {% endfor %}
       </div>
+      {% endif %}
     </div>
   </section>
 
-  <!-- ESPÈCIES -->
+  <!-- FITXES D'IDENTIFICACIÓ -->
   <section class="section-species">
     <div class="container">
-      <h2>Espècies del grup</h2>
+      <h2>Fitxes d'identificació</h2>
       <div class="species-grid">
         {% for esp in grup.especies %}
         <div class="species-card">
           <div class="sp-header">
-            <div class="sp-nom">{{ esp.nom }}</div>
-            <div class="sp-sci">{{ esp.nom_cientific }}</div>
-            <div class="sp-mida">◆ {{ esp.mida }}</div>
+            <div class="sp-header-inner">
+              <div class="sp-header-thumb">
+                <img src="{{ '/assets/images/groups/' | append: grup.id | append: '/' | append: esp.imatge | relative_url }}"
+                     alt="{{ esp.nom }}" onerror="this.style.display='none'">
+              </div>
+              <div>
+                <div class="sp-nom">{{ esp.nom }}</div>
+                <div class="sp-sci">{{ esp.nom_cientific }}</div>
+                <div class="sp-mida">◆ {{ esp.mida }}</div>
+              </div>
+            </div>
           </div>
           <ul class="sp-features">
             {% for car in esp.caracteristiques %}

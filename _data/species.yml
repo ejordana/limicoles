@@ -17,6 +17,7 @@ grups:
     especies:
       - nom: "Corriol petit"
         nom_cientific: "Charadrius dubius"
+        imatge: "corriol-petit.png"
         mida: "15–18 cm"
         caracteristiques:
           - label: "Bec"
@@ -29,6 +30,7 @@ grups:
             desc: "sense franja alar blanca"
       - nom: "Corriol gros"
         nom_cientific: "Charadrius hiaticula"
+        imatge: "corriol-gros.png"
         mida: "17–20 cm"
         caracteristiques:
           - label: "Bec"
@@ -41,6 +43,7 @@ grups:
             desc: "franja alar blanca distintiva"
       - nom: "Corriol camanegre"
         nom_cientific: "Charadrius alexandrinus"
+        imatge: "corriol-camanegre.png"
         mida: "15–17 cm"
         caracteristiques:
           - label: "Potes"
@@ -53,6 +56,7 @@ grups:
             desc: "pili canyella i franja frontal negra"
       - nom: "Daurada grossa"
         nom_cientific: "Pluvialis apricaria"
+        imatge: "daurada-grossa.png"
         mida: "26–29 cm"
         caracteristiques:
           - label: "Dors"
@@ -63,6 +67,7 @@ grups:
             desc: "ales completament fosques per sota"
       - nom: "Pigre gris"
         nom_cientific: "Pluvialis squatarola"
+        imatge: "pigre-gris.png"
         mida: "27–30 cm"
         caracteristiques:
           - label: "Dors"
@@ -73,6 +78,7 @@ grups:
             desc: "taca axil·lar negra característica"
       - nom: "Remena-rocs"
         nom_cientific: "Arenaria interpres"
+        imatge: "remena-rocs.png"
         mida: "21–25 cm"
         caracteristiques:
           - label: "Plomatge"
@@ -106,6 +112,7 @@ grups:
     especies:
       - nom: "Territ menut comú"
         nom_cientific: "Calidris minuta"
+        imatge: "territ-menut.png"
         mida: "14–15 cm"
         caracteristiques:
           - label: "Mida"
@@ -118,6 +125,7 @@ grups:
             desc: "doble V blanca a l'esquena característica"
       - nom: "Territ de Temminck"
         nom_cientific: "Calidris temminckii"
+        imatge: "territ-temminck.png"
         mida: "14–15 cm"
         caracteristiques:
           - label: "Potes"
@@ -130,6 +138,7 @@ grups:
             desc: "«tirrrt» vibrant"
       - nom: "Territ tres dits"
         nom_cientific: "Calidris alba"
+        imatge: "territ-tres-dits.png"
         mida: "18–21 cm"
         caracteristiques:
           - label: "Potes"
@@ -140,6 +149,7 @@ grups:
             desc: "platges sorrenques, segueix les onades"
       - nom: "Territ variant"
         nom_cientific: "Calidris alpina"
+        imatge: "territ-variant.png"
         mida: "17–21 cm"
         caracteristiques:
           - label: "Bec"
@@ -152,6 +162,7 @@ grups:
             desc: "«triip» característic"
       - nom: "Territ becllarg"
         nom_cientific: "Calidris ferruginea"
+        imatge: "territ-becllarg.png"
         mida: "19–22 cm"
         caracteristiques:
           - label: "Bec"
@@ -162,6 +173,7 @@ grups:
             desc: "carpó blanc sense franja central negra"
       - nom: "Territ gros"
         nom_cientific: "Calidris canutus"
+        imatge: "territ-gros.png"
         mida: "23–26 cm"
         caracteristiques:
           - label: "Mida"
@@ -174,6 +186,7 @@ grups:
             desc: "gris uniforme; carpó gris pàl·lid"
       - nom: "Territ fosc"
         nom_cientific: "Calidris maritima"
+        imatge: "territ-fosc.png"
         mida: "19–22 cm"
         caracteristiques:
           - label: "Plomatge"
@@ -184,6 +197,7 @@ grups:
             desc: "costes rocoses (molt rar a Catalunya)"
       - nom: "Territ becadell"
         nom_cientific: "Calidris falcinellus"
+        imatge: "territ-becadell.png"
         mida: "15–18 cm"
         caracteristiques:
           - label: "Bec"
@@ -215,6 +229,7 @@ grups:
     especies:
       - nom: "Gamba roja comuna"
         nom_cientific: "Tringa totanus"
+        imatge: "gamba-roja.png"
         mida: "24–27 cm"
         caracteristiques:
           - label: "Potes"
@@ -227,6 +242,7 @@ grups:
             desc: "«ti-diu-du» trisil·làbic"
       - nom: "Gamba roja pintada"
         nom_cientific: "Tringa erythropus"
+        imatge: "gamba-roja-pintada.png"
         mida: "29–33 cm"
         caracteristiques:
           - label: "Potes"
@@ -237,6 +253,7 @@ grups:
             desc: "cua barrada i tascó blanc entre les ales (sense franja alar)"
       - nom: "Gamba verda"
         nom_cientific: "Tringa nebularia"
+        imatge: "gamba-verda.png"
         mida: "30–34 cm"
         caracteristiques:
           - label: "Potes"
@@ -247,6 +264,7 @@ grups:
             desc: "potent «tiu-tiu-tiu»"
       - nom: "Gamba groga petita"
         nom_cientific: "Tringa flavipes"
+        imatge: "gamba-groga-petita.png"
         mida: "23–25 cm"
         caracteristiques:
           - label: "Potes"
@@ -257,6 +275,7 @@ grups:
             desc: "divagant de Nord-amèrica"
       - nom: "Siseta comuna"
         nom_cientific: "Tringa stagnatilis"
+        imatge: "siseta.png"
         mida: "22–25 cm"
         caracteristiques:
           - label: "Potes"
@@ -267,6 +286,7 @@ grups:
             desc: "molt esvelt; peus sobresurten per darrere la cua"
       - nom: "Xivita comuna"
         nom_cientific: "Tringa ochropus"
+        imatge: "xivita.png"
         mida: "20–24 cm"
         caracteristiques:
           - label: "Plomatge"
@@ -277,6 +297,7 @@ grups:
             desc: "rius i canals de reg"
       - nom: "Valona"
         nom_cientific: "Tringa glareola"
+        imatge: "valona.png"
         mida: "19–21 cm"
         caracteristiques:
           - label: "Dors"
@@ -287,6 +308,7 @@ grups:
             desc: "«xif-if-if»"
       - nom: "Xivitona comuna"
         nom_cientific: "Actitis hypoleucos"
+        imatge: "xivitona.png"
         mida: "18–20 cm"
         caracteristiques:
           - label: "Postura"
@@ -314,6 +336,7 @@ grups:
     especies:
       - nom: "Becadell comú"
         nom_cientific: "Gallinago gallinago"
+        imatge: "becadell.png"
         mida: "23–28 cm"
         caracteristiques:
           - label: "Bec"
@@ -326,6 +349,7 @@ grups:
             desc: "«xxeec» raspós en enlairar-se"
       - nom: "Becadell gros"
         nom_cientific: "Gallinago media"
+        imatge: "becadell-gros.png"
         mida: "26–30 cm"
         caracteristiques:
           - label: "Cua"
@@ -336,6 +360,7 @@ grups:
             desc: "recte i poc alt; enlairament més lent que el Becadell"
       - nom: "Becadell sord"
         nom_cientific: "Lymnocryptes minimus"
+        imatge: "becadell-sord.png"
         mida: "18–20 cm"
         caracteristiques:
           - label: "Bec"
@@ -346,6 +371,7 @@ grups:
             desc: "vol recte, baix i silenciós (no en ziga-zaga)"
       - nom: "Becada euràsiatica"
         nom_cientific: "Scolopax rusticola"
+        imatge: "becada.png"
         mida: "33–38 cm"
         caracteristiques:
           - label: "Mida"
@@ -373,6 +399,7 @@ grups:
     especies:
       - nom: "Batallaire"
         nom_cientific: "Calidris pugnax"
+        imatge: "batallaire.png"
         mida: "♂ 29–32 cm · ♀ 22–26 cm"
         caracteristiques:
           - label: "♂ nup."
@@ -402,6 +429,7 @@ grups:
     especies:
       - nom: "Tètol cuanegre"
         nom_cientific: "Limosa limosa"
+        imatge: "tetol-cuanegre.png"
         mida: "37–42 cm"
         caracteristiques:
           - label: "Cua"
@@ -414,6 +442,7 @@ grups:
             desc: "àmplia franja alar blanca + cua negra = inequívoc"
       - nom: "Tètol cuabarrat"
         nom_cientific: "Limosa lapponica"
+        imatge: "tetol-cuabarrat.png"
         mida: "35–41 cm"
         caracteristiques:
           - label: "Cua"
@@ -443,6 +472,7 @@ grups:
     especies:
       - nom: "Becut euràsiàtic"
         nom_cientific: "Numenius arquata"
+        imatge: "becut.png"
         mida: "48–57 cm"
         caracteristiques:
           - label: "Bec"
@@ -455,6 +485,7 @@ grups:
             desc: "«cur-luí» descendent"
       - nom: "Polit cantaire"
         nom_cientific: "Numenius phaeopus"
+        imatge: "polit.png"
         mida: "37–45 cm"
         caracteristiques:
           - label: "Bec"
