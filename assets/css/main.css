@@ -408,12 +408,13 @@ a:hover { text-decoration: underline; }
 
 /* ===== IL·LUSTRACIONS PER ESPÈCIE ===== */
 .species-illustrations-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 2.5rem;
 }
 .sp-ill-card {
+  width: 400px;
   background: var(--white);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -425,7 +426,8 @@ a:hover { text-decoration: underline; }
 
 .sp-ill-image {
   position: relative;
-  height: 130px;
+  width: 400px;
+  height: auto;
   background: var(--light-mud);
   display: flex;
   align-items: center;
@@ -433,8 +435,8 @@ a:hover { text-decoration: underline; }
   overflow: hidden;
 }
 .sp-ill-image img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 400px;
+  height: auto;
   object-fit: contain;
   padding: 8px;
   transition: transform 0.3s;
@@ -506,7 +508,9 @@ a:hover { text-decoration: underline; }
 }
 
 @media (max-width: 700px) {
-  .species-illustrations-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .sp-ill-card,
+  .sp-ill-image,
+  .sp-ill-image img {
+    width: 100%;
   }
 }
