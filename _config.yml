@@ -1,0 +1,30 @@
+title: "Limícoles de Catalunya"
+description: "Guia d'identificació de limícoles: taula de grups, fitxes per espècie i il·lustracions"
+baseurl: "/limicoles"   # canvia pel nom del teu repositori
+url: "https://ejordana.github.io"  # canvia USERNAME pel teu usuari de GitHub
+
+# Build settings
+markdown: kramdown
+theme: null
+plugins:
+  - jekyll-feed
+
+# Collections
+collections:
+  groups:
+    output: true
+    permalink: /grups/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "groups"
+    values:
+      layout: "group"
+
+# Exclude
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
