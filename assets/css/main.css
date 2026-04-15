@@ -420,6 +420,25 @@ a:hover { text-decoration: underline; }
   font-size: 0.78rem;
   padding-top: 1px;
 }
+.sp-footer {
+  padding: 0.6rem 1.1rem 0.8rem;
+  border-top: 1px solid var(--light-mud);
+}
+.sp-google-link {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: var(--bark);
+  text-decoration: none;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--mud);
+  border-radius: 4px;
+  transition: background 0.15s, color 0.15s;
+}
+.sp-google-link:hover {
+  background: var(--deep);
+  color: var(--white);
+  border-color: var(--deep);
+}
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 700px) {
