@@ -1,0 +1,428 @@
+---
+layout: default
+title: "Identificació ràpida"
+---
+
+<div class="key-page">
+
+  <div class="key-hero">
+    <div class="key-hero-text">
+      <h1>Identificació ràpida</h1>
+      <p>Respon les preguntes sobre l'ocell que estàs observant per identificar l'espècie.</p>
+    </div>
+  </div>
+
+  <div class="key-body container">
+
+    <div class="key-breadcrumb" id="key-breadcrumb" aria-label="Passos fets"></div>
+
+    <div class="key-card" id="key-card">
+      <div class="key-question" id="key-question"></div>
+      <div class="key-hint" id="key-hint"></div>
+      <div class="key-options" id="key-options"></div>
+      <div class="key-actions">
+        <button class="key-back-btn" id="key-back" style="display:none">← Enrere</button>
+        <button class="key-restart-btn" id="key-restart" style="display:none">Reinicia</button>
+      </div>
+    </div>
+
+    <div class="key-result" id="key-result" style="display:none">
+      <div class="key-result-inner">
+        <div class="key-result-label">Espècie identificada</div>
+        <div class="key-result-nom" id="result-nom"></div>
+        <div class="key-result-sci" id="result-sci"></div>
+        <div class="key-result-clau" id="result-clau"></div>
+        <div class="key-result-actions">
+          <a class="key-result-link" id="result-link" href="#" target="_blank">Veure fitxa completa</a>
+          <button class="key-restart-btn" id="key-restart-2">Identificar un altre ocell</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function () {
+
+  /* ── DADES DE LA CLAU ─────────────────────────────────────── */
+  var KEY = {
+    q: "Com és el bec de l'ocell?",
+    op: [
+      {
+        label: "Extremadament llarg — més llarg que el cap",
+        next: {
+          q: "Cap a on és la curvatura del bec?",
+          op: [
+            {
+              label: "Corbat cap avall",
+              next: {
+                q: "Quina mida i aspecte té l'ocell?",
+                op: [
+                  {
+                    label: "Molt gran · Cap llistat de manera uniforme",
+                    r: { nom: "Becut eurasiàtic", sci: "Numenius arquata", grup: "siglots",
+                         clau: "Bec extremadament llarg i corbat. Ocell molt gran. Cap llistat sense cella marcada." }
+                  },
+                  {
+                    label: "Mida mitjana · Llista clara al centre del pili",
+                    r: { nom: "Polit cantaire", sci: "Numenius phaeopus", grup: "siglots",
+                         clau: "Bec menys corbat que el Becut. Cella clara molt marcada, pili dividit per banda central." }
+                  }
+                ]
+              }
+            },
+            {
+              label: "Corbat cap amunt",
+              next: {
+                q: "Quines potes té i com és el bec?",
+                op: [
+                  {
+                    label: "Potes verdoses · Bec robust amb base clara",
+                    r: { nom: "Gamba verda", sci: "Tringa nebularia", grup: "tringes",
+                         clau: "Potes VERDOSES. Bec gruixut i llarg, corbat cap amunt. La més gran de les tringes de Catalunya." }
+                  },
+                  {
+                    label: "Potes ataronjades · Bec fi · Ocell grisenc i compacte",
+                    r: { nom: "Siseta cendrosa", sci: "Xenus cinereus", grup: null,
+                         clau: "Bec corbat cap amunt, fi. Potes taronja. Ocell gris compacte. Rar a Catalunya." }
+                  },
+                  {
+                    label: "Potes negres molt llargues · Base del bec rosada",
+                    r: { nom: "Tètol cuabarrat", sci: "Limosa lapponica", grup: "tetols",
+                         clau: "Potes NEGRES molt llargues. Bec molt llarg corbat cap amunt. Cua totalment barrada en vol." }
+                  }
+                ]
+              }
+            },
+            {
+              label: "Recte · Potes negres molt llargues",
+              r: { nom: "Tètol cuanegre", sci: "Limosa limosa", grup: "tetols",
+                   clau: "Potes NEGRES extremadament llargues. Bec molt llarg i recte, base color carn. Cua NEGRA amb base blanca. Franja alar blanca en vol." }
+            },
+            {
+              label: "Recte i curt · Ocell críptic que es camufla a terra",
+              next: {
+                q: "Com és el cap i el vol?",
+                op: [
+                  {
+                    label: "Franja clara al centre del pili · Vol en ziga-zaga explosiu",
+                    r: { nom: "Becadell comú", sci: "Gallinago gallinago", grup: "becades",
+                         clau: "Cap amb llista ocular + cella clara + franja pileal. Vol en ziga-zaga explosiu en enlairar-se." }
+                  },
+                  {
+                    label: "Doble cella · Sense franja central · S'enlaira silenciosament",
+                    r: { nom: "Becadell sord", sci: "Lymnocryptes minimus", grup: "becades",
+                         clau: "DOBLE cella clara i pili fosc. SENSE franja pileal central. Vol recte, baix i silenciós." }
+                  },
+                  {
+                    label: "Molt robust · Barres transversals al cap · Viu al bosc",
+                    r: { nom: "Becada eurasiàtica", sci: "Scolopax rusticola", grup: "becades",
+                         clau: "Gran i corpulenta. Plomatge bru rogenc molt críptic. Ales curtes i arrodonides. Boscos humits, crepuscular." }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        label: "Mitjà o curt",
+        next: {
+          q: "Quin color tenen les potes?",
+          op: [
+            {
+              label: "Vermelles",
+              next: {
+                q: "Com és el bec exactament?",
+                op: [
+                  {
+                    label: "Base del bec vermella · Franja blanca àmplia a l'ala en vol",
+                    r: { nom: "Gamba roja comuna", sci: "Tringa totanus", grup: "tringes",
+                         clau: "Potes VERMELLES. Base del bec vermella, punta fosca. Àmplia franja alar blanca en vol. Reclam «ti-diu-du»." }
+                  },
+                  {
+                    label: "Bec tot negre, llarg i prim · Cella blanca molt marcada",
+                    r: { nom: "Gamba roja pintada", sci: "Tringa erythropus", grup: "tringes",
+                         clau: "Potes vermelles. Bec tot negre, fi i llarg. En nupcial: bàsicament negra amb cella blanca contrastant." }
+                  }
+                ]
+              }
+            },
+            {
+              label: "Taronja / ataronjades",
+              next: {
+                q: "Com és el bec i on viu l'ocell?",
+                op: [
+                  {
+                    label: "Bec ataronjat amb punta negra · Collaret negre complet",
+                    r: { nom: "Corriol gros", sci: "Charadrius hiaticula", grup: "limicoles-petits",
+                         clau: "Potes ataronjades. Bec ataronjat amb punta negra. Collaret negre complet. Franja alar blanca en vol." }
+                  },
+                  {
+                    label: "Bec negre amb base taronja · Taca blanca davant l'ull · Costes rocoses",
+                    r: { nom: "Territ fosc", sci: "Calidris maritima", grup: "territs",
+                         clau: "Potes ATARONJADES, contrast amb cos gris pissarra fosc. Costes rocoses. Molt rar a Catalunya." }
+                  }
+                ]
+              }
+            },
+            {
+              label: "Grogues o verdoses",
+              next: {
+                q: "Com és el bec?",
+                op: [
+                  {
+                    label: "Molt prim i completament recte",
+                    next: {
+                      q: "Quina mida i aspecte té?",
+                      op: [
+                        {
+                          label: "Potes molt llargues · Aspecte molt esvelt · Peus sobresurten de la cua en vol",
+                          r: { nom: "Siseta comuna", sci: "Tringa stagnatilis", grup: "tringes",
+                               clau: "Potes verdoses molt llargues i fines. Bec molt prim i recte. Aspecte esvelt, peus sobresurten de la cua." }
+                        },
+                        {
+                          label: "Mida mitjana · Pit molt llistat · Potes grogues vives",
+                          r: { nom: "Gamba groga petita", sci: "Tringa flavipes", grup: "tringes",
+                               clau: "Potes GROGUES. Bec fi i recte. Cua molt barrada. Divagant de Nord-amèrica." }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    label: "Curt",
+                    next: {
+                      q: "Quin comportament i aspecte té?",
+                      op: [
+                        {
+                          label: "Gronxa contínuament la cua · Vol amb ales rígides cap avall",
+                          r: { nom: "Xivitona comuna", sci: "Actitis hypoleucos", grup: "tringes",
+                               clau: "Postura encorbada, gronxa contínuament la part posterior. Vol amb ales rígides cap avall alternant cops ràpids i planatge." }
+                        },
+                        {
+                          label: "Dors molt pigallat · Cella blanca llarga darrere l'ull",
+                          r: { nom: "Valona", sci: "Tringa glareola", grup: "tringes",
+                               clau: "Dors pigallat (menys fosc que la Xivita). Cella blanca marcada. Revers alar CLAR en vol (no negre)." }
+                        },
+                        {
+                          label: "Molt fosc per sobre · Carpó blanc molt contrastat en vol",
+                          r: { nom: "Xivita comuna", sci: "Tringa ochropus", grup: "tringes",
+                               clau: "Molt fosc (quasi negre) per sobre. ALES COMPLETAMENT NEGRES per sota en vol. Carpó blanc. Rius i canals." }
+                        },
+                        {
+                          label: "Postura molt erecta · Pit llistat amb límit abrupte al ventre",
+                          r: { nom: "Territ pectoral", sci: "Calidris melanotos", grup: null,
+                               clau: "Pit molt llistat amb límit abrupte sobre ventre blanc. Potes grogues. Rar a Catalunya." }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              label: "Negres o gris fosc",
+              next: {
+                q: "Té collaret o dibuix cefàlic marcat?",
+                op: [
+                  {
+                    label: "Sí — té collaret (Corriols)",
+                    next: {
+                      q: "Quin és el dibuix del cap?",
+                      op: [
+                        {
+                          label: "Anell ocular groc viu · Sense franja alar blanca en vol",
+                          r: { nom: "Corriol petit", sci: "Charadrius dubius", grup: "limicoles-petits",
+                               clau: "Anell ocular GROC viu. Collaret negre. Franja blanca entre pili i barra frontal. Sense franja alar en vol." }
+                        },
+                        {
+                          label: "Potes negres · Collaret incomplet · Pili canyella (mascle)",
+                          r: { nom: "Corriol camanegre", sci: "Charadrius alexandrinus", grup: "limicoles-petits",
+                               clau: "Potes NEGRES (diagnòstic!). Collaret INCOMPLET, només taques laterals al coll. Mascle nupcial: pili canyella." }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    label: "No — sense collaret (Territs)",
+                    next: {
+                      q: "Com és el bec i l'aspecte general?",
+                      op: [
+                        {
+                          label: "Molt petit (14 cm) · Bec curt i recte",
+                          r: { nom: "Territ menut comú", sci: "Calidris minuta", grup: "territs",
+                               clau: "El més petit dels territs (14-15 cm). Bec curt i recte. Jove: doble V blanca a l'esquena." }
+                        },
+                        {
+                          label: "Bec lleugerament corbat a la punta · Taca negra al ventre (nupcial)",
+                          r: { nom: "Territ variant", sci: "Calidris alpina", grup: "territs",
+                               clau: "Bec lleugerament corbat a l'extrem. Gran taca ventral negra en nupcial. El territ més comú a Catalunya." }
+                        },
+                        {
+                          label: "Bec llarg i totalment corbat cap avall · Carpó blanc pur en vol",
+                          r: { nom: "Territ becllarg", sci: "Calidris ferruginea", grup: "territs",
+                               clau: "Bec corbat cap avall a l'extrem (diagnòstic). Carpó blanc sense franja central negra en vol." }
+                        },
+                        {
+                          label: "Molt pàl·lid · Viu a la vora de les onades a platges sorrenques",
+                          r: { nom: "Territ tres dits", sci: "Calidris alba", grup: "territs",
+                               clau: "Molt pàl·lid. SENSE dit posterior (únic entre territs!). Platges sorrenques, segueix les onades." }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        label: "Curt · Ocell rodanxó, daurat o gris",
+        hint: "Útil quan l'ocell és massa lluny per veure les potes",
+        next: {
+          q: "Quin color veus a les aixelles en vol?",
+          hint: "Les aixelles són les plomes a la part interior de l'ala, a prop del cos",
+          op: [
+            {
+              label: "Aixelles BLANQUES",
+              r: { nom: "Daurada grossa", sci: "Pluvialis apricaria", grup: "limicoles-petits",
+                   clau: "Dors daurat/ocre amb taques. Ales completament fosques per sota. Aixelles BLANQUES en vol." }
+            },
+            {
+              label: "Aixelles NEGRES",
+              r: { nom: "Pigre gris", sci: "Pluvialis squatarola", grup: "limicoles-petits",
+                   clau: "Dors gris cendrós (no daurat). Taca axil·lar NEGRA molt característica en vol." }
+            }
+          ]
+        }
+      }
+    ]
+  };
+
+  /* ── ESTAT ────────────────────────────────────────────────── */
+  var path = [];   // [{node, choiceIdx, choiceLabel}, ...]
+  var current = KEY;
+
+  /* ── ELEMENTS ─────────────────────────────────────────────── */
+  var elQuestion   = document.getElementById('key-question');
+  var elHint       = document.getElementById('key-hint');
+  var elOptions    = document.getElementById('key-options');
+  var elBreadcrumb = document.getElementById('key-breadcrumb');
+  var elCard       = document.getElementById('key-card');
+  var elResult     = document.getElementById('key-result');
+  var elBack       = document.getElementById('key-back');
+  var elRestart    = document.getElementById('key-restart');
+  var elRestart2   = document.getElementById('key-restart-2');
+
+  /* ── RENDERITZA ───────────────────────────────────────────── */
+  function render() {
+    elCard.style.display = '';
+    elResult.style.display = 'none';
+
+    elQuestion.textContent = current.q;
+    elHint.textContent = current.hint || '';
+    elHint.style.display = current.hint ? '' : 'none';
+
+    elOptions.innerHTML = '';
+    current.op.forEach(function (op, i) {
+      var btn = document.createElement('button');
+      btn.className = 'key-option-btn';
+      btn.textContent = op.label;
+      if (op.hint) {
+        var small = document.createElement('span');
+        small.className = 'key-option-hint';
+        small.textContent = op.hint;
+        btn.appendChild(small);
+      }
+      btn.addEventListener('click', function () { choose(i); });
+      elOptions.appendChild(btn);
+    });
+
+    elBack.style.display = path.length > 0 ? '' : 'none';
+    elRestart.style.display = path.length > 0 ? '' : 'none';
+    renderBreadcrumb();
+  }
+
+  function choose(i) {
+    var op = current.op[i];
+    path.push({ node: current, idx: i });
+
+    if (op.r) {
+      showResult(op.r, op.label);
+    } else if (op.next) {
+      current = op.next;
+      render();
+    }
+  }
+
+  function showResult(r, choiceLabel) {
+    path[path.length - 1].choiceLabel = choiceLabel;
+    renderBreadcrumb();
+
+    elCard.style.display = 'none';
+    elResult.style.display = '';
+
+    document.getElementById('result-nom').textContent = r.nom;
+    document.getElementById('result-sci').textContent = r.sci;
+    document.getElementById('result-clau').textContent = r.clau;
+
+    var link = document.getElementById('result-link');
+    if (r.grup) {
+      link.href = '{{ site.baseurl }}/grups/' + r.grup + '/';
+      link.style.display = '';
+    } else {
+      link.style.display = 'none';
+    }
+  }
+
+  function goBack() {
+    if (path.length === 0) return;
+    var prev = path.pop();
+    current = prev.node;
+    render();
+  }
+
+  function restart() {
+    path = [];
+    current = KEY;
+    render();
+  }
+
+  function renderBreadcrumb() {
+    elBreadcrumb.innerHTML = '';
+    if (path.length === 0) return;
+    path.forEach(function (step, i) {
+      var op = step.node.op[step.idx];
+      var label = step.choiceLabel || op.label;
+      var span = document.createElement('span');
+      span.className = 'bc-item';
+      span.textContent = label.split('·')[0].trim();
+      elBreadcrumb.appendChild(span);
+      if (i < path.length - 1 || elResult.style.display !== 'none') {
+        var arr = document.createElement('span');
+        arr.className = 'bc-arrow';
+        arr.textContent = '›';
+        elBreadcrumb.appendChild(arr);
+      }
+    });
+    if (elResult.style.display !== 'none') {
+      var last = document.getElementById('result-nom');
+      if (last) {
+        var span = document.createElement('span');
+        span.className = 'bc-item bc-result';
+        span.textContent = last.textContent;
+        elBreadcrumb.appendChild(span);
+      }
+    }
+  }
+
+  elBack.addEventListener('click', goBack);
+  elRestart.addEventListener('click', restart);
+  elRestart2.addEventListener('click', restart);
+
+  render();
+
+})();
+</script>

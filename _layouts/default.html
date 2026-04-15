@@ -17,6 +17,7 @@
         <span class="title-sub">de Catalunya</span>
       </a>
       <nav class="main-nav">
+        <a href="{{ '/identificacio-rapida/' | relative_url }}" class="nav-key">Identificació ràpida</a>
         {% for grup in site.data.species.grups %}
         <a href="{{ '/grups/' | append: grup.id | append: '/' | relative_url }}">{{ grup.nom }}</a>
         {% endfor %}
