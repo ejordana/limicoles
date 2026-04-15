@@ -39,18 +39,15 @@ layout: default
       <div class="species-grid">
         {% for esp in grup.especies %}
         <div class="species-card">
+          <div class="sp-image">
+            <img src="{{ '/assets/images/groups/' | append: grup.id | append: '/' | append: esp.imatge | relative_url }}"
+                 alt="{{ esp.nom }}" loading="lazy" onerror="this.closest('.sp-image').classList.add('no-image')">
+            <div class="no-image-placeholder"><span>{{ esp.nom | slice: 0, 1 }}</span></div>
+          </div>
           <div class="sp-header">
-            <div class="sp-header-inner">
-              <div class="sp-header-thumb">
-                <img src="{{ '/assets/images/groups/' | append: grup.id | append: '/' | append: esp.imatge | relative_url }}"
-                     alt="{{ esp.nom }}" onerror="this.style.display='none'">
-              </div>
-              <div>
-                <div class="sp-nom">{{ esp.nom }}</div>
-                <div class="sp-sci">{{ esp.nom_cientific }}</div>
-                <div class="sp-mida">◆ {{ esp.mida }}</div>
-              </div>
-            </div>
+            <div class="sp-nom">{{ esp.nom }}</div>
+            <div class="sp-sci">{{ esp.nom_cientific }}</div>
+            <div class="sp-mida">◆ {{ esp.mida }}</div>
           </div>
           <ul class="sp-features">
             {% for car in esp.caracteristiques %}
