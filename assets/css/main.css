@@ -515,10 +515,20 @@ a:hover { text-decoration: underline; }
   box-shadow: var(--shadow);
   overflow: hidden;
 }
+.key-step-badge {
+  background: var(--accent);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.3rem 0.9rem;
+  display: inline-block;
+}
 .key-question {
   background: var(--deep);
   color: var(--white);
-  padding: 1.4rem 1.6rem;
+  padding: 1.1rem 1.6rem 1.4rem;
   font-family: 'Playfair Display', serif;
   font-size: 1.15rem;
   font-weight: 700;
@@ -539,32 +549,39 @@ a:hover { text-decoration: underline; }
   gap: 0.6rem;
 }
 .key-option-btn {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  width: 100%;
   background: var(--light-mud);
   border: 1.5px solid var(--mud);
   border-radius: var(--radius);
-  padding: 0.8rem 1.1rem;
+  padding: 0.8rem 1rem;
   text-align: left;
   font-family: inherit;
   font-size: 0.88rem;
   color: var(--deep);
   cursor: pointer;
   transition: background 0.15s, border-color 0.15s, transform 0.1s;
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
+  line-height: 1.45;
+  margin-bottom: 0.5rem;
 }
+.key-option-btn:last-child { margin-bottom: 0; }
+.key-option-letter {
+  flex-shrink: 0;
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 0.82rem;
+  min-width: 1rem;
+}
+.key-option-text { flex: 1; }
 .key-option-btn:hover {
   background: var(--deep);
   color: var(--white);
   border-color: var(--deep);
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
-.key-option-hint {
-  font-size: 0.75rem;
-  color: var(--bark);
-  font-style: italic;
-}
-.key-option-btn:hover .key-option-hint { color: var(--mud); }
+.key-option-btn:hover .key-option-letter { color: var(--mud); }
 .key-actions {
   padding: 0.8rem 1.2rem 1rem;
   border-top: 1px solid var(--light-mud);
